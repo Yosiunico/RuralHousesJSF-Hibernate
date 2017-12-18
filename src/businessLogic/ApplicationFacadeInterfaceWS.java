@@ -59,7 +59,7 @@ public interface ApplicationFacadeInterfaceWS  {
 	
 	@WebMethod public void initializeBD();
 	
-	public void bookOffer(int phoneNumber, int offerNumber);
+	public void bookOffer(String phoneNumber, int offerNumber);
 
 	
 }

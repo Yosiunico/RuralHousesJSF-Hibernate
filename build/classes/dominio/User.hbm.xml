@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 17-dic-2017 20:05:48 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 18-dic-2017 15:34:08 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="dominio.User" table="USER">
-        <id name="phoneNumber" type="int">
+        <id name="phoneNumber" type="java.lang.String">
             <column name="PHONENUMBER" />
             <generator class="assigned" />
         </id>
         <set name="offers" table="OFFER" inverse="false" cascade="save-update" lazy="true">
             <key>
-                <column name="PHONENUMBER" />
+                <column name="USER" />
             </key>
             <one-to-many class="dominio.Offer" />
         </set>

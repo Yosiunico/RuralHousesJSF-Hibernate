@@ -3,16 +3,16 @@ package dominio;
 import java.util.Set;
 
 public class User {
-	public int phoneNumber;
+	public String phoneNumber;
 	public Set<Offer> offers;
 	
 	public User() {}
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 

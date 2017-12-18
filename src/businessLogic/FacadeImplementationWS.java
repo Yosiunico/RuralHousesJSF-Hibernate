@@ -118,7 +118,7 @@ public class FacadeImplementationWS  implements ApplicationFacadeInterfaceWS {
 
 
 	@Override
-	public void bookOffer(int phoneNumber, int offerNumber) {
+	public void bookOffer(String phoneNumber, int offerNumber) {
 		HibernateDataAccess dbManager=new HibernateDataAccess();
 		
 		dbManager.userBookOffer( phoneNumber,  offerNumber);

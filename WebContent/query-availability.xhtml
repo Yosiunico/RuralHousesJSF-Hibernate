@@ -35,8 +35,12 @@
 							value="#{queryAvailabilityBean.numberOfNights}" decimalPlaces="0" /></td>
 				</tr>
 				<tr>
-				<td>							<p:outputLabel>PhoneNumber:</p:outputLabel></td><td>
-					<p:inputNumber id="phone" value="#{queryAvailabilityBean.phoneNumber}" decimalPlaces="0"/></td>
+				<td>							
+					<p:outputLabel>PhoneNumber:</p:outputLabel>
+				</td>
+				<td>
+					<p:inputMask value="#{queryAvailabilityBean.phoneNumber}" mask="999-999-999"></p:inputMask>
+				</td>
 				
 				</tr>
 
@@ -69,8 +73,8 @@
 							</p:column>
 							<p:column style="width:32px;text-align: center">
 								<p:commandButton
-									action="#{queryAvailabilityBean.bookOffer(offer.offerNumber)}" icon="ui-icon-search"
-									title="Book">
+									action="#{queryAvailabilityBean.bookOffer(offer.offerNumber)}"
+									value="Book" title="Book" update="offersDataTable">
 								</p:commandButton>
 							</p:column>
 						</p:dataTable></td>

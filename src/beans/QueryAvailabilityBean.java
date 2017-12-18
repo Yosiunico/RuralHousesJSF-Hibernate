@@ -19,19 +19,19 @@ public class QueryAvailabilityBean {
 	private Date firstDay;
 	private List<Offer> offers;
 	private int numberOfNights;
-	private int phoneNumber;
+	private String phoneNumber;
 		
 	public QueryAvailabilityBean() {}
 	
 	
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
 
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		System.out.println(phoneNumber);
 		this.phoneNumber = phoneNumber;
 	}
@@ -85,11 +85,19 @@ public class QueryAvailabilityBean {
 	}
 	
 	public void bookOffer(java.lang.Integer title) {
+		if(phoneNumber == null || phoneNumber.length() < 9) {
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Empty phonenumber", "Please, set a phonenumber!");
+			RequestContext.getCurrentInstance().showMessageInDialog(message);
+			return;
+		}
+		
+		
 		Facade.getInstance().bookOffer(phoneNumber, title);
 		
 		
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Offer Booked", "Your offer has been booked!");
 		RequestContext.getCurrentInstance().showMessageInDialog(message);
+		this.queryAvailability();
 	}
 
 	public String main() {

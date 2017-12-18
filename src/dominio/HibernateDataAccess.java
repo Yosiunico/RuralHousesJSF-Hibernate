@@ -122,7 +122,7 @@ public class HibernateDataAccess {
 		session.getTransaction().commit();
 		
 	}
-	public User getUser(int phoneNumber) {
+	public User getUser(String phoneNumber) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		User result = (User) session.get(User.class, phoneNumber);
@@ -139,7 +139,7 @@ public class HibernateDataAccess {
 		session.getTransaction().commit();
 		return result;
 	}
-	public void userBookOffer(int phoneNumber, int offerNumber) {
+	public void userBookOffer(String phoneNumber, int offerNumber) {
 		System.out.println("Booking offer ->"+offerNumber+ " with "+ phoneNumber+ " phonenumber");
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
